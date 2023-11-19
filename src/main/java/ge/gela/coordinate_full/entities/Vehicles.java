@@ -11,10 +11,7 @@ import lombok.Setter;
 public class Vehicles {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="vehicles_seq_generation")
-    @SequenceGenerator(name="vehicles_seq_generation", sequenceName="vehicles_id_seq", allocationSize = 1)
-    private Integer id;
-
-    @Column(name = "veh_id")
+    @SequenceGenerator(name="vehicles_seq_generation", sequenceName="vehicles_veh_id_seq", allocationSize = 1)
     private Integer vehId;
 
     @Column(name = "veh_num")

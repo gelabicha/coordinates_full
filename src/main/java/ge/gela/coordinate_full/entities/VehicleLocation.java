@@ -15,11 +15,15 @@ public class VehicleLocation {
     private Integer id;
 
     @Column(name = "veh_id")
-    private Integer vehId;
+    private String vehId;
 
     @Column(name = "latitude")
     private Double latitude;
 
     @Column(name = "longitude")
     private Double longitude;
+
+    public void setVehId(Integer integer) {
+
+    }
 }
