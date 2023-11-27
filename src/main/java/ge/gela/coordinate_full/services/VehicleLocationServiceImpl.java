@@ -14,4 +14,14 @@ public class VehicleLocationServiceImpl implements VehicleLocationService {
     public List<VehicleLocation> findAllByVehId(Integer vehId) {
         return vehicleLocationRepository.findALLbyVehId(vehId);
     }
+
+    @Override
+    public void vehicleLocationAdd(Double latitude1, Double longitude1, vehId4) {
+        VehicleLocation vehicleLocation = new VehicleLocation();
+        vehicleLocation.setLatitude(latitude1);
+        vehicleLocation.setLongitude(longitude1);
+        vehicleLocation.setVehId(vehId4);
+
+        vehicleLocationRepository.save(vehicleLocation);
+         }
 }
