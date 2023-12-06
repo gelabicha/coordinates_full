@@ -36,8 +36,7 @@ public class NewVehicleRequestController {
      * @param carNum1
      */
     @GetMapping("vehicle")
-    @ResponseBody
-    public void NewVehicle(@RequestBody Double latitude1, @RequestBody Double longitude1, @RequestBody String carNum1) {
+    public void NewVehicle(@RequestParam("latitude") Double latitude1, @RequestParam("longitude") Double longitude1, @RequestParam("carNum") String carNum1) {
         /*
          * მიღებჯლი ნომრით ვეძებთ მანქანას,
          * ვიღებთ მოძებნილი მანქანის იდს,
