@@ -23,6 +23,9 @@ public class VehicleLocation {
     @Column(name = "longitude")
     private Double longitude;
 
+    @Column(name = "distance")
+    private Double distance;
+
     public void setVehId(Integer integer) {
 
     }

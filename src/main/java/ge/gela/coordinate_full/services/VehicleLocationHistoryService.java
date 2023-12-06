@@ -12,5 +12,5 @@ import java.util.List;
 
 public interface VehicleLocationHistoryService {
 
-    void vehicleHistoryCreateNew(Double latitude1, Double longitude1, List<VehicleLocation> vehId1);
+    void vehicleHistoryCreateNew(Double latitude1, Double longitude1, Integer carId2);
 }

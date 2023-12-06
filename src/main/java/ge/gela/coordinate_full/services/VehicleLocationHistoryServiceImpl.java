@@ -16,12 +16,11 @@ import java.util.List;
 public class VehicleLocationHistoryServiceImpl implements VehicleLocationHistoryService {
     private final VehicleLocationHistoryRepository vehicleLocationHistoryRepository;
        @Override
-    public void vehicleHistoryCreateNew(Double latitude1, Double longitude1, List<VehicleLocation> vehId1) {
+    public void vehicleHistoryCreateNew(Double latitude1, Double longitude1, Integer carId2) {
         VehicleLocationHistory vehicleLocationHistory= new VehicleLocationHistory();
-        VehicleLocation carId3 = vehId1.get(0);
         vehicleLocationHistory.setLatitude(latitude1);
         vehicleLocationHistory.setLongitude(longitude1);
-        vehicleLocationHistory.setVehId(carId3.getId());
+        vehicleLocationHistory.setVehId(carId2);
         vehicleLocationHistory.setIntime(LocalDateTime.now());
         vehicleLocationHistoryRepository.save(vehicleLocationHistory);
 

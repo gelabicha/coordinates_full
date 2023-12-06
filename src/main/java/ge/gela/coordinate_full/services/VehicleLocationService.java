@@ -12,5 +12,9 @@ public interface VehicleLocationService {
     List<VehicleLocation> findAllByVehId(Integer vehId);
 
 
-    void vehicleLocationAdd(Double latitude1, Double longitude1,vehId4);
+    void vehicleLocationAdd(Double latitude1, Double longitude1,Integer carId2);
+
+    List<VehicleLocation> getVehicleLocation();
+
+    Double distanceCal(Double latitude1, Double latitude, Double longitude1, Double longitude);
 }
