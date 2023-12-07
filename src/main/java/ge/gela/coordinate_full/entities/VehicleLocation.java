@@ -15,7 +15,7 @@ public class VehicleLocation {
     private Integer id;
 
     @Column(name = "veh_id")
-    private String vehId;
+    private Integer vehId;
 
     @Column(name = "latitude")
     private Double latitude;

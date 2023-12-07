@@ -22,13 +22,13 @@ public class VehicleController {
     public Vehicles vehiclesCreateNew(@RequestBody VehiclesCreateModel vehiclesCreateModel){
         return vehicleService.vehiclesCreateNew(vehiclesCreateModel);
     }
-    @GetMapping("vehicle")
+    @GetMapping("vehicle12/{vehNum}")
     public List<Vehicles> search(@PathVariable String vehNum){
         return vehicleService.search(vehNum);
         }
 
-    @GetMapping("vehicle")
-    public List<Vehicles> search(@PathVariable Integer vehId){
+    @GetMapping("vehicle/{vehId}")
+    public List<Vehicles> search1(@PathVariable Integer vehId){
         return vehicleService.search(vehId);
     }
 }

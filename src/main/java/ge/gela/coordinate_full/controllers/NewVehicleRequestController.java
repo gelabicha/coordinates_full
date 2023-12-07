@@ -29,7 +29,7 @@ public class NewVehicleRequestController {
      * იღებს მონაცემებს და
      * ეძებს მიღებული ნომრით მანქანას,
      * ანახლებს და ამატებს მანქანის მდებარეობას.
-     * .
+     * თუ არ მოიძებნა - ვისვრით შეცდომას.
      *
      * @param latitude1
      * @param longitude1
@@ -43,12 +43,11 @@ public class NewVehicleRequestController {
          * იდ-ით ვეძებთ ლოკაციის ცხრილში,
          * თუ მოიძებნა ვანახლებთ კორდინატებს,
          * თუ არ მოიძებნა ვამატებთ როგორც ახალს,        *
-         * თუ არ მოიძებნა - ვისვრით შეცდომას.        *
          * */
         var carNum = vehiclesRepository.findAllByVehNum(carNum1);
         if (!carNum.isEmpty()) {
             var carId2 = carNum.get(0).getVehId();
-            var vehId1 = vehicleLocationRepository.findALLbyVehId(carId2);
+            var vehId1 = vehicleLocationRepository.findAllByVehId(carId2);
             if (!vehId1.isEmpty()) {
                 var vehId3 = vehId1.get(0);
                 vehId3.setLatitude(latitude1);

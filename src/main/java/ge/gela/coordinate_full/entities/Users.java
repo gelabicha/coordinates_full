@@ -3,14 +3,18 @@ package ge.gela.coordinate_full.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Getter
 @Setter
 @Table(schema = "public", name = "users")
-public class Users {
+public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="users_seq_generation")
     @SequenceGenerator(name="users_seq_generation", sequenceName="users_id_seq", allocationSize = 1)
@@ -39,4 +43,26 @@ public class Users {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    public Collection<? extends GrantedAuthority> getAuthorities(){
+        return new ArrayList<>();
+    }
+    public String getPassword(){
+        return password;
+    }
+    public String getUsername(){
+        return email;
+    }
+    public boolean isAccountNonExpired(){
+        return true;
+    }
+    public boolean isAccountNonLocked(){
+        return true;
+    }
+    public boolean isCredentialsNonExpired(){
+        return true;
+    }
+    public boolean isEnabled(){
+        return true;
+    }
 }

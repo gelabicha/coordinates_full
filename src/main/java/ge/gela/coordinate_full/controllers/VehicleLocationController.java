@@ -16,7 +16,7 @@ import java.util.List;
 public class VehicleLocationController {
     public final VehicleLocationRepository vehicleLocationRepository;
     public final VehicleLocationService vehicleLocationService;
-    @GetMapping("vehicle")
+    @GetMapping("vehicleLoc/{vehId}")
     public List<VehicleLocation> search(@PathVariable Integer vehId){
         return vehicleLocationService.findAllByVehId(vehId);
     }

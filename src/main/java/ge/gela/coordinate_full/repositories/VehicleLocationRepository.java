@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 
 public interface VehicleLocationRepository extends JpaRepository<VehicleLocation,Integer> {
-    List<VehicleLocation> findALLbyVehId(Integer vehId);
+    List<VehicleLocation> findAllByVehId(Integer vehId);
 }

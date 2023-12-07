@@ -14,7 +14,7 @@ public class VehicleLocationServiceImpl implements VehicleLocationService {
 
     @Override
     public List<VehicleLocation> findAllByVehId(Integer vehId) {
-        return vehicleLocationRepository.findALLbyVehId(vehId);
+        return vehicleLocationRepository.findAllByVehId(vehId);
     }
 
     @Override
